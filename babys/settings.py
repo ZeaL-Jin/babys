@@ -137,7 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# 静态资源配置方式STATIC_ROOT ******(当DEBUG=true时，不用；为false时，要设置)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'AllStatic')
 
 SECURE_CONTENT_TYPE_NOSNIFF = False
+
+
+# wyesur1537@sandbox.com

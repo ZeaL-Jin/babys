@@ -19,8 +19,6 @@
 
           </div>
         </div>
-
-
         <div class="right-cont-wrap">
           <div class="right-cont">
             <div class="sort layui-clear">
@@ -31,8 +29,6 @@
               <a {% if s == 'likes' %}class="active" {% endif %} href="{% url 'commodity:commodity' %}?t={{ t }}&s=likes&n={{ n }}">收藏</a>
 
             </div>
-
-
             <div class="prod-number">
                 <a href="javascript:;">商品列表</a>
 				<span>></span>
@@ -57,8 +53,6 @@
             </div>
           </div>
         </div>
-
-
       <div id="demo0" style="text-align: center;">
             <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
                 {% if pages.has_previous %}
@@ -81,8 +75,7 @@
 	  </div>
     </div>
 {% endblock content %}
-
-
+  
 {% block script %}
   layui.config({
     base: '{% static 'js/' %}'

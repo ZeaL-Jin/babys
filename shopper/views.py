@@ -85,6 +85,7 @@ def shopcartView(request):
     commodityInfos = CommodityInfos.objects.filter(id__in=commodityDcit.keys())
     return render(request, 'shopcart.html', locals())
 
+
 def deleteAPI(request):
     result = {'state': 'success'}
     userId = request.GET.get('userId', '')

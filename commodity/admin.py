@@ -66,7 +66,7 @@ class CommodityInfosAdmin(admin.ModelAdmin):
     # 改变数据新增页或数据修改页的网页布局
     fieldsets = (
         ('商品信息', {
-            'fields': ('name', 'sezes', 'types', 'price', 'discount')
+            'fields': ('name', 'sezes', 'types', 'price', 'discount','stock','sold','img','details')
         }),
         ('收藏数量', {
             # 设置隐藏与显示
