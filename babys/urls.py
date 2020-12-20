@@ -35,9 +35,6 @@ urlpatterns = [
 ]
 
 # 设置404和500
-
-
-# 设置404和500
 from index import views
 handler404 = views.page_not_found
 handler500 = views.page_error

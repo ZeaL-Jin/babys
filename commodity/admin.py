@@ -18,8 +18,6 @@ class TypesAdmin(admin.ModelAdmin):
 
 
 
-
-
 # 重写get_readonly_fields函数************?
 # 设置超级管理员和普通管理员权限
 def get_readonly_fields(self, request, obj=None):
