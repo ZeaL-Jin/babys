@@ -17,7 +17,6 @@ class TypesAdmin(admin.ModelAdmin):
     list_filter = ['firsts']
 
 
-
 # 重写get_readonly_fields函数************?
 # 设置超级管理员和普通管理员权限
 def get_readonly_fields(self, request, obj=None):
@@ -29,8 +28,8 @@ def get_readonly_fields(self, request, obj=None):
 
 
 # 根据当前用户名设置数据访问权限************?
-def get_queryset(self,request):
-    qs=super().get_queryset(request)
+def get_queryset(self, request):
+    qs = super().get_queryset(request)
     if request.user.is_superuser:
         return qs
     else:
@@ -38,19 +37,17 @@ def get_queryset(self,request):
 
 
 # 项目应用commodity的admin.py
-def save_model(self,request,obj,form,change):
+def save_model(self, request, obj, form, change):
     if change:
-        user=request.user.username
-        name=self.model.object.get(pk=obj.pk).name
-        types=form.cleaned_data['types']
-        f=open('d://DjangoLog/log.txt','a')
-        f.write(name+'商品类型:'+types+'，被'+user+'修改'+'\r\n')
+        user = request.user.username
+        name = self.model.object.get(pk=obj.pk).name
+        types = form.cleaned_data['types']
+        f = open('d://DjangoLog/log.txt', 'a')
+        f.write(name + '商品类型:' + types + '，被' + user + '修改' + '\r\n')
         f.close()
     else:
         pass
-    super().save_model(request,obj,form,change)
-
-
+    super().save_model(request, obj, form, change)
 
 
 @admin.register(CommodityInfos)
@@ -64,7 +61,7 @@ class CommodityInfosAdmin(admin.ModelAdmin):
     # 改变数据新增页或数据修改页的网页布局
     fieldsets = (
         ('商品信息', {
-            'fields': ('name', 'sezes', 'types', 'price', 'discount','stock','sold','img','details')
+            'fields': ('name', 'sezes', 'types', 'price', 'discount', 'stock', 'sold', 'img', 'details')
         }),
         ('收藏数量', {
             # 设置隐藏与显示
@@ -89,6 +86,7 @@ class CommodityInfosAdmin(admin.ModelAdmin):
 
     # 在数据列表页设置显示的模型字段
     list_display = ['id', 'name', 'sezes', 'types', 'price', 'discount']
+
     list_display.append('colored_name')
 
     # 为数据列表页的字段id和name设置路由地址，该路由地址可进入数据修改页
